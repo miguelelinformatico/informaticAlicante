@@ -10,6 +10,14 @@
 
 <p>Hacer la página principal para todos los dispositivos, y el resto solo para uno.</p>
 
+<h6>Ideas para Páginas:</h6>
+<p>Principal</p>
+<p>Iniciar Sesión</p>
+<p>Carrito</p>
+<p>Una Página con los componentes más relevantes</p>
+<p>Una Página con solo Blogs</p>
+<p>Página de Busqueda</p>
+
 <h3>Requisitos funcionales y no funcionales:</h3>
 <table>
   <tr>
