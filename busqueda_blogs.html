@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Búsqueda de Blogs - informaticAlicante</title>
+	<style>
+		:root {
+			--primary: #2563eb;
+			--primary-dark: #1d4ed8;
+			--secondary: #f97316;
+			--light: #f8fafc;
+			--dark: #1e293b;
+			--gray: #64748b;
+			--success: #10b981;
+			--border-radius: 8px;
+			--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		}
+        
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', system-ui, sans-serif;
+		}
+        
+		body {
+			background-color: #f1f5f9;
+			color: var(--dark);
+			line-height: 1.6;
+		}
+        
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+        
+		/* Header */
+		header {
+			background: white;
+			box-shadow: var(--shadow);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+        
+		.header-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem 0;
+		}
+        
+		.logo {
+			font-size: 1.8rem;
+			font-weight: bold;
+			color: var(--primary);
+		}
+        
+		.logo span {
+			color: var(--secondary);
+		}
+        
+		nav ul {
+			display: flex;
+			list-style: none;
+			gap: 2rem;
+		}
+        
+		nav a {
+			text-decoration: none;
+			color: var(--dark);
+			font-weight: 500;
+			transition: color 0.3s;
+		}
+        
+		nav a:hover {
+			color: var(--primary);
+		}
+        
+		.user-actions {
+			display: flex;
+			gap: 1rem;
+		}
+        
+		.btn {
+			padding: 0.5rem 1rem;
+			border-radius: var(--border-radius);
+			border: none;
+			font-weight: 500;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+        
+		.btn-primary {
+			background-color: var(--primary);
+			color: white;
+		}
+        
+		.btn-primary:hover {
+			background-color: var(--primary-dark);
+		}
+        
+		.btn-outline {
+			background-color: transparent;
+			border: 1px solid var(--primary);
+			color: var(--primary);
+		}
+        
+		.btn-outline:hover {
+			background-color: var(--primary);
+			color: white;
+		}
+        
+		/* Search Hero */
+		.search-hero {
+			background: linear-gradient(135deg, var(--primary), #3b82f6);
+			color: white;
+			padding: 2.5rem 0;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		.search-box {
+			margin-top: 1rem;
+			display:flex;
+			justify-content:center;
+			gap:0.5rem;
+			align-items:center;
+		}
+
+		.search-input {
+			width: 60%;
+			padding: 0.75rem 1rem;
+			border-radius: 999px;
+			border: none;
+			outline: none;
+			font-size: 1rem;
+		}
+
+		.search-info {
+			text-align: center;
+			margin-top: 0.5rem;
+			color: rgba(255,255,255,0.9);
+		}
+
+		/* Main Content */
+		.main-content {
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			gap: 2rem;
+			margin-bottom: 3rem;
+		}
+
+		.section-title {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+			padding-bottom: 0.5rem;
+			border-bottom: 2px solid var(--primary);
+		}
+
+		.blog-posts {
+			display: grid;
+			gap: 1.5rem;
+		}
+
+		.post-card {
+			background: white;
+			border-radius: var(--border-radius);
+			box-shadow: var(--shadow);
+			overflow: hidden;
+		}
+
+		.post-image {
+			height: 160px;
+			background-color: #e2e8f0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--gray);
+		}
+
+		.post-content {
+			padding: 1.2rem;
+		}
+
+		.post-title {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.post-excerpt {
+			color: var(--gray);
+			margin-bottom: 1rem;
+		}
+
+		.post-meta {
+			display: flex;
+			justify-content: space-between;
+			color: var(--gray);
+			font-size: 0.9rem;
+		}
+
+		.sidebar {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.sidebar-widget {
+			background: white;
+			border-radius: var(--border-radius);
+			box-shadow: var(--shadow);
+			padding: 1.5rem;
+		}
+
+		.widget-title {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+			color: var(--primary);
+		}
+
+		.categories-list {
+			list-style: none;
+		}
+
+		.categories-list li {
+			padding: 0.5rem 0;
+			border-bottom: 1px solid #e2e8f0;
+		}
+
+		.categories-list li:last-child {
+			border-bottom: none;
+		}
+
+		.categories-list a {
+			text-decoration: none;
+			color: var(--dark);
+			transition: color 0.3s;
+		}
+
+		.categories-list a:hover {
+			color: var(--primary);
+		}
+
+		.no-results {
+			text-align: center;
+			padding: 2rem;
+			color: var(--gray);
+		}
+
+		@media (max-width: 768px) {
+			.main-content {
+				grid-template-columns: 1fr;
+			}
+
+			.search-input {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="header-content">
+				<div class="logo">informatic<span>Alicante</span></div>
+				<nav>
+					<ul>
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Tienda</a></li>
+						<li><a href="#">Componentes</a></li>
+						<li><a href="#">Contacto</a></li>
+					</ul>
+				</nav>
+				<div class="user-actions">
+					<button class="btn btn-outline">Iniciar Sesión</button>
+					<button class="btn btn-primary">Registrarse</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="search-hero">
+		<div class="container">
+			<h1>Buscar en el Blog</h1>
+			<p class="search-info">Escribe palabras clave (título, autor o contenido) para filtrar las entradas del blog.</p>
+			<div class="search-box">
+				<input id="searchInput" class="search-input" type="search" placeholder="Buscar artículos, p. ej. 'PC Gaming'" aria-label="Buscar en el blog">
+				<button id="searchBtn" class="btn btn-primary">Buscar</button>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+		<div class="main-content">
+			<main>
+				<h2 class="section-title">Resultados de la búsqueda <span id="resultsCount" style="font-weight:normal;color:var(--gray);font-size:0.9rem;margin-left:8px;"></span></h2>
+				<div id="posts" class="blog-posts">
+					<!-- Posts renderizados por JS -->
+				</div>
+				<div id="noResults" class="no-results" style="display:none;">No se encontraron resultados para su búsqueda.</div>
+			</main>
+
+			<aside class="sidebar">
+				<div class="sidebar-widget">
+					<h3 class="widget-title">Categorías</h3>
+					<ul class="categories-list" id="categoriesList">
+						<!-- categorías generadas -->
+					</ul>
+				</div>
+
+				<div class="sidebar-widget">
+					<h3 class="widget-title">Entradas Recientes</h3>
+					<ul id="recentList" style="list-style:none; padding-left:0;">
+						<!-- recientes -->
+					</ul>
+				</div>
+			</aside>
+		</div>
+	</div>
+
+	<footer style="background:var(--dark); color:white; padding:2rem 0; margin-top:2rem;">
+		<div class="container">
+			<div style="text-align:center; color:#cbd5e1;">&copy; informaticAlicante</div>
+		</div>
+	</footer>
+
+	<script>
+		// Datos de ejemplo (puedes reemplazarlos por llamadas a API)
+		const postsData = [
+			{id:1, title: 'Guía para construir tu primer PC Gaming', excerpt: 'Aprende los pasos esenciales para montar tu propio ordenador gaming...', author:'Admin', date:'15 Mar 2023', category:'Guías y Tutoriales'},
+			{id:2, title: 'Los mejores componentes 2023', excerpt: 'Review de los procesadores, tarjetas gráficas y memorias más destacadas...', author:'TecnoAlicante', date:'10 Mar 2023', category:'Reviews'},
+			{id:3, title: 'Optimiza tu setup de trabajo', excerpt: 'Consejos para mejorar tu espacio de trabajo con los periféricos adecuados...', author:'WorkSetup', date:'5 Mar 2023', category:'Periféricos'},
+			{id:4, title: 'Comparativa: SSD NVMe vs SATA', excerpt: 'Analizamos las diferencias en rendimiento y precio entre NVMe y SATA...', author:'StorageLab', date:'20 Abr 2023', category:'Almacenamiento'},
+			{id:5, title: 'Montando una PC de bajo presupuesto', excerpt: 'Componentes económicos que ofrecen la mejor relación calidad-precio...', author:'BudgetBuilds', date:'30 Abr 2023', category:'Componentes PC'},
+			{id:6, title: 'Cómo elegir la mejor tarjeta gráfica', excerpt: 'Factores a tener en cuenta al escoger GPU según tu uso...', author:'Grafix', date:'12 May 2023', category:'Reviews'}
+		];
+
+		// Render inicial
+		const postsContainer = document.getElementById('posts');
+		const noResults = document.getElementById('noResults');
+		const resultsCount = document.getElementById('resultsCount');
+
+		function renderPosts(posts){
+			postsContainer.innerHTML = '';
+			if(!posts || posts.length === 0){
+				noResults.style.display = 'block';
+				resultsCount.textContent = '(0 resultados)';
+				return;
+			}
+			noResults.style.display = 'none';
+			resultsCount.textContent = `(${posts.length} resultado${posts.length>1? 's':''})`;
+			posts.forEach(p => {
+				const article = document.createElement('article');
+				article.className = 'post-card';
+				article.innerHTML = `
+					<div class="post-image">Imagen del Post</div>
+					<div class="post-content">
+						<h3 class="post-title">${escapeHtml(p.title)}</h3>
+						<p class="post-excerpt">${escapeHtml(p.excerpt)}</p>
+						<div class="post-meta"><span>Por: ${escapeHtml(p.author)}</span><span>${escapeHtml(p.date)}</span></div>
+					</div>
+				`;
+				postsContainer.appendChild(article);
+			});
+		}
+
+		// Escape simple para evitar inyección en este ejemplo
+		function escapeHtml(str){
+			return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+		}
+
+		// Llenar sidebar (categorías y recientes)
+		function populateSidebar(){
+			const cats = [...new Set(postsData.map(p => p.category))];
+			const categoriesList = document.getElementById('categoriesList');
+			categoriesList.innerHTML = '';
+			cats.forEach(c => {
+				const li = document.createElement('li');
+				li.innerHTML = `<a href="#" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</a>`;
+				categoriesList.appendChild(li);
+			});
+
+			const recentList = document.getElementById('recentList');
+			recentList.innerHTML = '';
+			postsData.slice(0,5).forEach(p => {
+				const li = document.createElement('li');
+				li.style.padding = '0.35rem 0';
+				li.innerHTML = `<a href="#">${escapeHtml(p.title)}</a>`;
+				recentList.appendChild(li);
+			});
+		}
+
+		// Filtrado básico
+		function filterPosts(query){
+			if(!query) return postsData.slice();
+			const q = query.trim().toLowerCase();
+			return postsData.filter(p => (
+				p.title.toLowerCase().includes(q) ||
+				p.excerpt.toLowerCase().includes(q) ||
+				p.author.toLowerCase().includes(q) ||
+				p.category.toLowerCase().includes(q)
+			));
+		}
+
+		// Inicial
+		renderPosts(postsData);
+		populateSidebar();
+
+		// Eventos
+		const searchInput = document.getElementById('searchInput');
+		const searchBtn = document.getElementById('searchBtn');
+
+		function doSearch(){
+			const q = searchInput.value;
+			const results = filterPosts(q);
+			renderPosts(results);
+		}
+
+		searchBtn.addEventListener('click', doSearch);
+		searchInput.addEventListener('keyup', function(e){
+			if(e.key === 'Enter') doSearch();
+			// Opcional: búsqueda dinámica en cada tecla (descomentear si se quiere)
+			//renderPosts(filterPosts(this.value));
+		});
+
+		// Filtrar por categoría en sidebar
+		document.getElementById('categoriesList').addEventListener('click', function(e){
+			if(e.target && e.target.matches('a[data-cat]')){
+				e.preventDefault();
+				const cat = e.target.getAttribute('data-cat');
+				searchInput.value = cat;
+				renderPosts(filterPosts(cat));
+			}
+		});
+	</script>
+</body>
+</html>
