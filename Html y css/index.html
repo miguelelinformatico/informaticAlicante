@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>informaticAlicante - Tecnología y Componentes</title>
-    <link rel="stylesheet" href="css/stylesIndex.css">
+    <link rel="stylesheet" href="css/stylesIndex_responsive.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -15,11 +27,14 @@
                 <li><a href="busqueda_blogs.html">Blog</a></li>
                 <li><a href="#">Componentes</a></li>
                 <li><a href="#">Contacto</a></li>
+                <li class="auth-buttons"><a href="login.html" class="btn-login">Iniciar Sesión</a></li>
+                <li class="auth-buttons"><a href="register.html" class="btn-register">Registrarse</a></li>
             </ul>
-            <section>
-                <button><a href="login.html">Iniciar Sesión</a></button>
-                <button><a href="register.html">Registrarse</a></button>
-            </section>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -33,7 +48,7 @@
         <section>
             <section>
                 <h2>Últimas del Blog</h2>
-                
+
                 <article>
                     <figure>
                         <img src="imagenes/Montar-PC-2.jpg" alt="Imagen del Post">
@@ -45,7 +60,7 @@
                         <time datetime="2023-03-15">15 Mar 2023</time>
                     </footer>
                 </article>
-                
+
                 <article>
                     <figure>
                         <img src="imagenes/mejores-componentes.jpg" alt="Imagen del Post">
@@ -57,7 +72,7 @@
                         <time datetime="2023-03-10">10 Mar 2023</time>
                     </footer>
                 </article>
-                
+
                 <article>
                     <figure>
                         <img src="imagenes/set-up.jpg" alt="Imagen del Post">
@@ -70,7 +85,7 @@
                     </footer>
                 </article>
             </section>
-            
+
             <aside>
                 <section>
                     <h3>Categorías</h3>
@@ -86,10 +101,10 @@
                 </section>
             </aside>
         </section>
-        
+
         <section>
             <h2>Productos Destacados</h2>
-            
+
             <article>
                 <figure>
                     <img src="imagenes/intel-core-i7.jpg" alt="Procesador Intel i7">
@@ -98,7 +113,7 @@
                 <p>329,99 €</p>
                 <button>Ver Detalles</button>
             </article>
-            
+
             <article>
                 <figure>
                     <img src="imagenes/ram 16gb.jpg" alt="Memoria RAM 16GB">
@@ -107,7 +122,7 @@
                 <p>79,99 €</p>
                 <button>Ver Detalles</button>
             </article>
-            
+
             <article>
                 <figure>
                     <img src="imagenes/ssd 1TB.jpg" alt="SSD 1TB NVMe">
@@ -118,14 +133,14 @@
             </article>
         </section>
     </main>
-    
+
     <footer>
         <section>
             <section>
                 <h3>InformaticAlicante</h3>
                 <p>Tu tienda de confianza para componentes informáticos en Alicante.</p>
             </section>
-            
+
             <section>
                 <h3>Enlaces Rápidos</h3>
                 <nav>
@@ -137,7 +152,7 @@
                     </ul>
                 </nav>
             </section>
-            
+
             <section>
                 <h3>Categorías</h3>
                 <nav>
@@ -149,7 +164,7 @@
                     </ul>
                 </nav>
             </section>
-            
+
             <section>
                 <h3>Contacto</h3>
                 <address>
@@ -159,7 +174,7 @@
                 </address>
             </section>
         </section>
-        
+
         <p>&copy; 2025 informaticAlicante. Todos los derechos reservados.</p>
     </footer>
 </body>
