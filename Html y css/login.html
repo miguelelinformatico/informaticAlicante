@@ -4,24 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - informaticAlicante</title>
-    <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="stylesheet" href="css/stylesLogin_responsive.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
-        <hgroup>
-            <h1><span style="color: #2563eb;">informatic</span><span style="color: #f97316;">Alicante</span></h1>
-        </hgroup>
         <nav>
+            <h1><span style="color: var(--primary);">informatic</span><span style="color: var(--secondary);">Alicante</span></h1>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="busqueda_blogs.html">Blog</a></li>
                 <li><a href="#">Componentes</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li><a href="register.html" style="color:#2563eb; font-weight:600">Registrarse</a></li>
+                <li class="auth-buttons"><a href="register.html" class="btn-register">Registrarse</a></li>
             </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
-    
+
     <main>
         <section>
             <hgroup>
