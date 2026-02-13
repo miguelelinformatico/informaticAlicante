@@ -149,26 +149,3 @@
         a:hover {
             text-decoration: underline;
         }
-        
-        @media (max-width: 480px) {
-            main {
-                padding: 1.25rem;
-                max-width: 340px;
-            }
-            
-            nav ul {
-                gap: 0.7rem;
-            }
-            
-            h1 {
-                font-size: 1rem;
-            }
-            
-            h2 {
-                font-size: 0.8rem;
-            }
-            
-            input, button {
-                font-size: 0.85rem;
-            }
-        }
