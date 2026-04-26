@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nosotros – informaticAlicante</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --azul: #1a5bb5;
+      --naranja: #e87020;
+      --gris-claro: #f5f6f8;
+      --texto: #1a1a1a;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--texto); background: #fff; }
+    .navbar { border-bottom: 1px solid #e0e0e0; }
+    .navbar-brand { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--texto) !important; }
+    .navbar-brand span { color: var(--naranja); }
+    .nav-link { font-size: .9rem; color: #333 !important; }
+    .nav-link:hover { color: var(--azul) !important; }
+    .btn-registro { background: var(--azul); color: #fff !important; border-radius: 6px; font-size: .85rem; padding: 6px 16px; }
+    .btn-registro:hover { background: #154ea0; }
+    .hero-strip { background: var(--azul); color: #fff; padding: 48px 0 44px; }
+    .hero-strip h1 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: .4rem; }
+    .hero-strip p { font-size: 1rem; opacity: .88; margin: 0; }
+    .sobre { padding: 72px 0; }
+    .sobre .intro-label { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--naranja); font-weight: 600; margin-bottom: .6rem; }
+    .sobre h2 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.75rem; line-height: 1.25; margin-bottom: 1.1rem; }
+    .sobre .lead-text { font-size: 1rem; color: #444; line-height: 1.7; margin-bottom: 1.5rem; }
+    .sobre .acento { width: 40px; height: 3px; background: var(--naranja); border-radius: 2px; margin-bottom: 1.5rem; }
+    .valor-card { border: 1px solid #e8eaf0; border-radius: 10px; padding: 24px 22px; height: 100%; transition: box-shadow .2s, transform .2s; }
+    .valor-card:hover { box-shadow: 0 6px 24px rgba(26,91,181,.1); transform: translateY(-3px); }
+    .valor-icon { width: 44px; height: 44px; border-radius: 10px; background: #eef3fc; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .valor-icon svg { width: 22px; height: 22px; fill: var(--azul); }
+    .valor-card h5 { font-family: 'Sora', sans-serif; font-weight: 600; font-size: .95rem; margin-bottom: .4rem; }
+    .valor-card p { font-size: .875rem; color: #555; margin: 0; line-height: 1.6; }
+    .img-wrap { border-radius: 14px; overflow: hidden; position: relative; }
+    .img-badge { position: absolute; bottom: 20px; left: 20px; background: #fff; border-radius: 10px; padding: 12px 18px; box-shadow: 0 4px 16px rgba(0,0,0,.12); display: flex; align-items: center; gap: 10px; }
+    .img-badge .num { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--azul); line-height: 1; }
+    .img-badge .sub { font-size: .75rem; color: #666; line-height: 1.3; }
+    .stats-band { background: var(--gris-claro); border-top: 1px solid #e5e7ef; border-bottom: 1px solid #e5e7ef; padding: 40px 0; }
+    .stat-item { text-align: center; }
+    .stat-item .num { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 2rem; color: var(--azul); line-height: 1; }
+    .stat-item .num span { color: var(--naranja); }
+    .stat-item .lbl { font-size: .82rem; color: #666; margin-top: 4px; }
+    .equipo { padding: 72px 0; background: #fff; }
+    .equipo h2 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.6rem; margin-bottom: .3rem; }
+    .equipo .sub { color: #666; font-size: .95rem; margin-bottom: 2.5rem; }
+    .miembro-card { border: 1px solid #e8eaf0; border-radius: 12px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+    .miembro-card:hover { box-shadow: 0 6px 20px rgba(26,91,181,.1); transform: translateY(-3px); }
+    .avatar-placeholder { width: 100%; aspect-ratio: 1/1; background: linear-gradient(135deg, #dde6f5 0%, #c4d4ee 100%); display: flex; align-items: center; justify-content: center; }
+    .avatar-placeholder svg { width: 56px; height: 56px; fill: var(--azul); opacity: .5; }
+    .miembro-info { padding: 16px; }
+    .miembro-info h6 { font-family: 'Sora', sans-serif; font-weight: 600; font-size: .95rem; margin-bottom: 2px; }
+    .miembro-info .rol { font-size: .8rem; color: var(--naranja); font-weight: 500; }
+    .miembro-info p { font-size: .8rem; color: #666; margin: 8px 0 0; line-height: 1.5; }
+    .cta-band { background: var(--azul); color: #fff; padding: 56px 0; text-align: center; }
+    .cta-band h3 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.6rem; margin-bottom: .6rem; }
+    .cta-band p { opacity: .88; margin-bottom: 1.6rem; }
+    .btn-cta-primary { background: var(--naranja); color: #fff; border: none; border-radius: 8px; padding: 12px 28px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: background .2s; }
+    .btn-cta-primary:hover { background: #d06518; color: #fff; }
+    .btn-cta-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.5); border-radius: 8px; padding: 12px 28px; font-weight: 500; font-size: .95rem; text-decoration: none; margin-left: 12px; transition: border-color .2s; }
+    .btn-cta-outline:hover { border-color: #fff; color: #fff; }
+    @media (max-width: 767px) {
+      .hero-strip h1 { font-size: 1.5rem; }
+      .stat-item .num { font-size: 1.5rem; }
+      .img-wrap { margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white py-2">
+  <div class="container">
+    <a class="navbar-brand" href="#">informatic<span>Alicante</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-center gap-2">
+        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Componentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link btn-registro ms-2" href="#">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-strip text-center">
+  <div class="container">
+    <h1>Sobre Nosotros</h1>
+    <p>Conoce quiénes somos, qué hacemos y por qué lo hacemos</p>
+  </div>
+</section>
+
+<section class="sobre">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <p class="intro-label">Nuestra historia</p>
+        <div class="acento"></div>
+        <h2>Tecnología accesible para cada persona en Alicante</h2>
+        <p class="lead-text">
+          Nacimos con una idea sencilla: que encontrar o vender componentes informáticos de segunda mano en la provincia de Alicante fuera fácil, seguro y sin complicaciones. Desde entonces hemos construido una comunidad activa de particulares y pequeñas empresas que comparten esa misma filosofía.
+        </p>
+        <p class="lead-text" style="margin-top:-.5rem;">
+          No somos una gran corporación. Somos un equipo local que entiende las necesidades reales de los usuarios: precio justo, información clara y trato cercano.
+        </p>
+        <div class="row g-3 mt-1">
+          <div class="col-sm-6">
+            <div class="valor-card">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.25 3.4 10.15 8 11.35C16.6 21.15 20 16.25 20 11V5l-8-3zm-1 13l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
+              </div>
+              <h5>Confianza y transparencia</h5>
+              <p>Perfiles verificados y valoraciones reales para que compres con total seguridad.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="valor-card">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              </div>
+              <h5>Comunidad local</h5>
+              <p>Conectamos a personas de la misma provincia para facilitar recogidas y entregas rápidas.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="valor-card">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 3H7v2H5v2H3v2h2v2H3v2h2v2h2v2h2v-2h2v2h2v-2h2v-2h2v-2h-2v-2h2V9h-2V7h-2V5h-2V3H9zm0 2h6v2h2v2h-2v2h2v2h-2v2h-2v2H9v-2H7v-2H5v-2h2v-2H5V9h2V7h2V5z"/></svg>
+              </div>
+              <h5>Foco en componentes</h5>
+              <p>Especialistas en hardware: CPUs, GPUs, RAM, placas base y mucho más.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="valor-card">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+              </div>
+              <h5>Soporte cercano</h5>
+              <p>Resolvemos tus dudas rápido, sin bots ni largas esperas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="img-wrap">
+          <svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="560" height="420" fill="#dde6f5"/>
+            <rect x="0" y="270" width="560" height="150" fill="#c4d4ee"/>
+            <rect x="40" y="260" width="480" height="18" rx="4" fill="#b0c4e4"/>
+            <rect x="60" y="170" width="130" height="90" rx="6" fill="#1a5bb5" opacity=".9"/>
+            <rect x="75" y="182" width="100" height="66" rx="3" fill="#0d2e5e"/>
+            <rect x="82" y="190" width="60" height="4" rx="2" fill="#4af" opacity=".7"/>
+            <rect x="82" y="200" width="45" height="4" rx="2" fill="#4af" opacity=".5"/>
+            <rect x="82" y="210" width="70" height="4" rx="2" fill="#e87020" opacity=".7"/>
+            <rect x="82" y="220" width="50" height="4" rx="2" fill="#4af" opacity=".5"/>
+            <rect x="82" y="230" width="35" height="4" rx="2" fill="#4f9" opacity=".6"/>
+            <rect x="110" y="258" width="30" height="8" rx="2" fill="#b0c4e4"/>
+            <rect x="370" y="155" width="150" height="105" rx="6" fill="#1a5bb5" opacity=".9"/>
+            <rect x="384" y="167" width="122" height="79" rx="3" fill="#0d2e5e"/>
+            <rect x="392" y="176" width="70" height="4" rx="2" fill="#4af" opacity=".6"/>
+            <rect x="392" y="186" width="55" height="4" rx="2" fill="#e87020" opacity=".7"/>
+            <rect x="392" y="196" width="80" height="4" rx="2" fill="#4f9" opacity=".5"/>
+            <rect x="392" y="206" width="40" height="4" rx="2" fill="#4af" opacity=".6"/>
+            <rect x="392" y="216" width="65" height="4" rx="2" fill="#e87020" opacity=".5"/>
+            <rect x="430" y="258" width="30" height="8" rx="2" fill="#b0c4e4"/>
+            <rect x="65" y="270" width="120" height="18" rx="4" fill="#94afd8"/>
+            <rect x="370" y="270" width="140" height="18" rx="4" fill="#94afd8"/>
+            <rect x="230" y="195" width="100" height="70" rx="5" fill="#2d4a8a" stroke="#1a5bb5" stroke-width="2"/>
+            <rect x="240" y="205" width="20" height="20" rx="2" fill="#1a5bb5" opacity=".8"/>
+            <rect x="268" y="205" width="20" height="20" rx="2" fill="#e87020" opacity=".8"/>
+            <rect x="296" y="205" width="20" height="20" rx="2" fill="#1a5bb5" opacity=".8"/>
+            <rect x="240" y="233" width="80" height="6" rx="2" fill="#4af" opacity=".4"/>
+            <rect x="240" y="244" width="60" height="4" rx="2" fill="#4af" opacity=".3"/>
+            <circle cx="160" cy="148" r="24" fill="#8aa8d8"/>
+            <ellipse cx="160" cy="215" rx="38" ry="50" fill="#8aa8d8"/>
+            <circle cx="400" cy="138" r="24" fill="#6b94d0"/>
+            <ellipse cx="400" cy="205" rx="38" ry="50" fill="#6b94d0"/>
+            <circle cx="152" cy="145" r="3" fill="#fff" opacity=".6"/>
+            <circle cx="168" cy="145" r="3" fill="#fff" opacity=".6"/>
+            <circle cx="392" cy="135" r="3" fill="#fff" opacity=".6"/>
+            <circle cx="408" cy="135" r="3" fill="#fff" opacity=".6"/>
+            <text x="280" y="390" text-anchor="middle" font-family="Sora,sans-serif" font-size="13" fill="#5a7ab8">Equipo informaticAlicante</text>
+          </svg>
+          <div class="img-badge">
+            <div class="num">+500</div>
+            <div class="sub">anuncios<br>activos hoy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 stat-item">
+        <div class="num">2<span>k+</span></div>
+        <div class="lbl">Usuarios registrados</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item">
+        <div class="num">500<span>+</span></div>
+        <div class="lbl">Anuncios publicados</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item">
+        <div class="num">98<span>%</span></div>
+        <div class="lbl">Valoraciones positivas</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item">
+        <div class="num">3<span> años</span></div>
+        <div class="lbl">Ayudando a la comunidad</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="equipo">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:.5rem;">Las personas detrás del proyecto</p>
+      <h2>Nuestro equipo</h2>
+      <p class="sub">Un grupo pequeño pero comprometido con hacer las cosas bien</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="miembro-card">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="miembro-info">
+            <h6>Alex R.</h6>
+            <div class="rol">Fundador &amp; Dev</div>
+            <p>Apasionado del hardware y del software libre. Lleva el proyecto desde el primer día.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="miembro-card">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="miembro-info">
+            <h6>Omar A.</h6>
+            <div class="rol">Diseño &amp; UX</div>
+            <p>Se encarga de que la plataforma sea intuitiva y agradable para todos los usuarios.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="miembro-card">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="miembro-info">
+            <h6>Miguel Ángel Q.</h6>
+            <div class="rol">Soporte &amp; comunidad</div>
+            <p>Primera línea de contacto con los usuarios. Resuelve dudas y gestiona incidencias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h3>¿Te gustaría formar parte?</h3>
+    <p>Únete a nuestra comunidad y empieza a comprar o vender componentes hoy mismo.</p>
+    <a href="#" class="btn-cta-primary">Crear cuenta gratis</a>
+    <a href="#" class="btn-cta-outline">Contactar</a>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
