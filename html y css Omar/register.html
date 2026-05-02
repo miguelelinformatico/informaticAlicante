@@ -5,72 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - informaticAlicante</title>
     <link rel="stylesheet" href="css/stylesRegister.css">
+    <link rel="stylesheet" href="css/stylesHeader.css">
 </head>
 <body>
-    <header>
-        <hgroup>
-            <h1><span style="color: #2563eb;">informatic</span><span style="color: #f97316;">Alicante</span></h1>
-        </hgroup>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="busqueda_blogs.html">Blog</a></li>
-                <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="#">Contacto</a></li>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="index.html" aria-label="Ir a inicio">
+                <h1>informatic<span>Alicante</span></h1>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="busqueda_blogs.html">Blog</a></li>
+                <li><a class="nav-link" href="componentes.html">Componentes</a></li>
+                <li><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
+            <section class="nav-actions">
+                <a class="nav-btn nav-btn--login" href="login.html">Iniciar Sesion</a>
+                <a class="nav-btn nav-btn--register nav-btn--active" href="register.html" aria-current="page">Registrarse</a>
+            </section>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <hgroup>
-                <h1><span style="color: #2563eb;">informatic</span><span style="color: #f97316;">Alicante</span></h1>
-                <h2>Regístrate y comienza a usar informaticAlicante</h2>
-            </hgroup>
+    <main class="register-main">
+        <section class="register-layout">
+            <section class="register-showcase">
+                <header class="register-showcase__header">
+                    <p class="register-showcase__eyebrow">Cuenta gratuita</p>
+                    <h2>Crea tu cuenta y ten un punto de partida mas comodo para explorar hardware y contenido.</h2>
+                    <p>Registrarte te ayuda a seguir productos, volver a tus categorias favoritas y moverte por la web con una experiencia mas completa.</p>
+                </header>
+
+                <figure class="register-showcase__media">
+                    <img src="imagenes/mejores-componentes.jpg" alt="Componentes destacados de ordenador sobre una mesa">
+                </figure>
+
+                <section class="register-showcase__steps">
+                    <article>
+                        <strong>1. Crea tu perfil</strong>
+                        <span>Completa tus datos y deja lista tu cuenta en menos de un minuto.</span>
+                    </article>
+                    <article>
+                        <strong>2. Guarda referencias</strong>
+                        <span>Ten a mano productos, categorias y lecturas para volver rapido.</span>
+                    </article>
+                    <article>
+                        <strong>3. Sigue explorando</strong>
+                        <span>Entra al blog y al catalogo con una base mas comoda para decidir.</span>
+                    </article>
+                </section>
+
+                <ul class="register-showcase__list">
+                    <li>Ideal para organizar mejor tus comparativas y siguientes compras.</li>
+                    <li>Diseno sencillo, soporte cercano y navegacion conectada entre paginas.</li>
+                    <li>Una forma mas ordenada de seguir todo lo que te interesa de la tienda.</li>
+                </ul>
+            </section>
+
+            <section class="register-panel">
+                <header class="register-panel__header">
+                    <p class="register-panel__eyebrow">Registro</p>
+                    <h1>Crea tu cuenta</h1>
+                    <p>Abre tu acceso en informaticAlicante y empieza a guardar tus referencias desde hoy.</p>
+                </header>
+
+                <form id="registerForm" class="register-form" novalidate>
+                    <section class="register-form__split">
+                        <fieldset class="register-form__group">
+                            <label for="name">Nombre completo</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ej. Maria Perez">
+                            <small id="nameError" class="error register-form__error" aria-live="polite"></small>
+                        </fieldset>
+
+                        <fieldset class="register-form__group">
+                            <label for="email">Correo electronico</label>
+                            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com">
+                            <small id="emailError" class="error register-form__error" aria-live="polite"></small>
+                        </fieldset>
+                    </section>
+
+                    <fieldset class="register-form__group">
+                        <label for="phone">Telefono</label>
+                        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+34 600 000 000">
+                    </fieldset>
+
+                    <section class="register-form__split">
+                        <fieldset class="register-form__group">
+                            <label for="password">Contrasena</label>
+                            <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="Minimo 8 caracteres">
+                            <small id="passwordError" class="error register-form__error" aria-live="polite"></small>
+                        </fieldset>
+
+                        <fieldset class="register-form__group">
+                            <label for="confirm">Confirmar contrasena</label>
+                            <input id="confirm" name="confirm" type="password" autocomplete="new-password" minlength="8" required placeholder="Repite la contrasena">
+                            <small id="confirmError" class="error register-form__error" aria-live="polite"></small>
+                        </fieldset>
+                    </section>
+
+                    <label class="register-form__terms" for="agree">
+                        <input id="agree" name="agree" type="checkbox" required>
+                        <span>Acepto los <a href="SobreNosotros.html">terminos y condiciones</a></span>
+                    </label>
+
+                    <small id="matchError" class="error register-form__match-error" aria-live="assertive">Las contrasenas no coinciden.</small>
+
+                    <section class="register-form__actions">
+                        <button type="submit" class="register-form__primary">Crear cuenta</button>
+                        <button type="button" id="btnLogin" class="register-form__secondary" onclick="window.location.href='login.html'">Ya tengo cuenta</button>
+                    </section>
+
+                    <p class="register-form__footnote">Ya tienes cuenta? <a href="login.html" id="linkLogin">Inicia sesion</a></p>
+                </form>
+
+                <aside class="register-panel__aside">
+                    <strong>Empieza con buen pie</strong>
+                    <p>Tu cuenta te deja una base mas organizada para moverte entre articulos, categorias y futuras compras.</p>
+                </aside>
+            </section>
         </section>
-
-        <form id="registerForm" novalidate>
-            <fieldset>
-                <label for="name">Nombre completo</label>
-                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ej. María Pérez">
-                <small id="nameError" class="error" aria-live="polite"></small>
-            </fieldset>
-
-            <fieldset>
-                <label for="email">Correo electrónico</label>
-                <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com">
-                <small id="emailError" class="error" aria-live="polite"></small>
-            </fieldset>
-
-            <fieldset>
-                <label for="phone">Teléfono (opcional)</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+34 600 000 000">
-            </fieldset>
-
-            <fieldset>
-                <label for="password">Contraseña</label>
-                <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="Mínimo 8 caracteres">
-                <small id="passwordError" class="error" aria-live="polite"></small>
-            </fieldset>
-
-            <fieldset>
-                <label for="confirm">Confirmar contraseña</label>
-                <input id="confirm" name="confirm" type="password" autocomplete="new-password" minlength="8" required placeholder="Repite la contraseña">
-                <small id="confirmError" class="error" aria-live="polite"></small>
-            </fieldset>
-
-            <div class="terms">
-                <input id="agree" name="agree" type="checkbox" required>
-                <label for="agree">Acepto los <a href="#" style="color: #2563eb;">términos y condiciones</a></label>
-            </div>
-
-            <small id="matchError" class="error" style="display: none;" aria-live="assertive">Las contraseñas no coinciden.</small>
-
-            <button type="submit">Crear cuenta</button>
-            <button type="button" id="btnLogin">Entrar</button>
-
-            <p>¿Ya tienes cuenta? <a href="login.html" id="linkLogin">Inicia sesión</a></p>
-        </form>
     </main>
 </body>
 </html>
