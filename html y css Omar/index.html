@@ -3,164 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>informaticAlicante - Tecnología y Componentes</title>
+    <title>informaticAlicante - Tecnologia y Componentes</title>
     <link rel="stylesheet" href="css/stylesIndex.css">
+    <link rel="stylesheet" href="css/stylesHeader.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>informatic<span>Alicante</span></h1>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="busqueda_blogs.html">Blog</a></li>
-                <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="#">Contacto</a></li>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="index.html" aria-label="Ir a inicio">
+                <h1>informatic<span>Alicante</span></h1>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link active" href="index.html" aria-current="page">Inicio</a></li>
+                <li><a class="nav-link" href="busqueda_blogs.html">Blog</a></li>
+                <li><a class="nav-link" href="componentes.html">Componentes</a></li>
+                <li><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
-            <section>
-                <button><a href="login.html">Iniciar Sesión</a></button>
-                <button><a href="register.html">Registrarse</a></button>
+            <section class="nav-actions">
+                <a class="nav-btn nav-btn--login" href="login.html">Iniciar Sesion</a>
+                <a class="nav-btn nav-btn--register" href="register.html">Registrarse</a>
             </section>
         </nav>
     </header>
 
-    <section>
-        <h2>Tecnología y Componentes al Mejor Precio</h2>
-        <p>Encuentra los mejores componentes informáticos y aprende con nuestro blog tecnológico</p>
-        <button>Explorar Productos</button>
+    <section class="index-hero">
+        <section class="index-hero__inner">
+            <section class="index-hero__content">
+                <p class="index-hero__eyebrow">Hardware, comparativas y ofertas</p>
+                <h2>Tecnologia y componentes para montar tu PC con mejores decisiones</h2>
+                <p>Explora productos destacados, categorias claras y articulos utiles para elegir sin perder tiempo entre demasiadas opciones.</p>
+                <section class="index-hero__actions">
+                    <button type="button" onclick="window.location.href='componentes.html'">Explorar Productos</button>
+                    <a href="busqueda_blogs.html">Ver Blog</a>
+                </section>
+            </section>
+            <section class="index-hero__panel">
+                <section class="index-hero__stats">
+                    <article>
+                        <strong>50+</strong>
+                        <span>Componentes activos</span>
+                    </article>
+                    <article>
+                        <strong>3</strong>
+                        <span>Guias destacadas</span>
+                    </article>
+                    <article>
+                        <strong>Local</strong>
+                        <span>Soporte cercano</span>
+                    </article>
+                </section>
+                <ul class="index-hero__highlights">
+                    <li>Selecciones rapidas para gaming, trabajo y upgrades</li>
+                    <li>Blog con consejos claros para comprar mejor</li>
+                    <li>Accesos directos a categorias y productos clave</li>
+                </ul>
+            </section>
+        </section>
     </section>
 
-    <main>
-        <section>
-            <section>
-                <h2>Últimas del Blog</h2>
-                
-                <article>
+    <main class="index-main">
+        <section class="index-layout">
+            <section class="index-blog-list">
+                <header class="index-heading">
+                    <p class="index-heading__eyebrow">Blog reciente</p>
+                    <h2>Ultimas del Blog</h2>
+                </header>
+
+                <article class="index-blog-card">
                     <figure>
-                        <img src="imagenes/Montar-PC-2.jpg" alt="Imagen del Post">
+                        <img src="imagenes/Montar-PC-2.jpg" alt="Imagen del post sobre PC gaming">
                     </figure>
-                    <h3>Guía para construir tu primer PC Gaming</h3>
-                    <p>Aprende los pasos esenciales para montar tu propio ordenador gaming sin complicaciones...</p>
-                    <footer>
-                        <span>Por: Admin</span>
-                        <time datetime="2023-03-15">15 Mar 2023</time>
-                    </footer>
+                    <section class="index-blog-card__content">
+                        <h3>Guia para construir tu primer PC Gaming</h3>
+                        <p>Aprende los pasos esenciales para montar tu propio ordenador gaming sin complicaciones y con una base solida desde el principio.</p>
+                        <section class="index-blog-card__meta">
+                            <span>Por: Admin</span>
+                            <time datetime="2023-03-15">15 Mar 2023</time>
+                        </section>
+                    </section>
                 </article>
-                
-                <article>
+
+                <article class="index-blog-card">
                     <figure>
-                        <img src="imagenes/mejores-componentes.jpg" alt="Imagen del Post">
+                        <img src="imagenes/mejores-componentes.jpg" alt="Imagen del post sobre mejores componentes">
                     </figure>
-                    <h3>Los mejores componentes</h3>
-                    <p>Review de los procesadores, tarjetas gráficas y memorias más destacadas del año...</p>
-                    <footer>
-                        <span>Por: TecnoAlicante</span>
-                        <time datetime="2023-03-10">10 Mar 2023</time>
-                    </footer>
+                    <section class="index-blog-card__content">
+                        <h3>Los mejores componentes</h3>
+                        <p>Una review compacta de procesadores, tarjetas graficas y memorias destacadas para orientar una compra mas segura.</p>
+                        <section class="index-blog-card__meta">
+                            <span>Por: TecnoAlicante</span>
+                            <time datetime="2023-03-10">10 Mar 2023</time>
+                        </section>
+                    </section>
                 </article>
-                
-                <article>
+
+                <article class="index-blog-card">
                     <figure>
-                        <img src="imagenes/set-up.jpg" alt="Imagen del Post">
+                        <img src="imagenes/set-up.jpg" alt="Imagen del post sobre setup de trabajo">
                     </figure>
-                    <h3>Optimiza tu setup de trabajo</h3>
-                    <p>Consejos para mejorar tu espacio de trabajo con los periféricos adecuados...</p>
-                    <footer>
-                        <span>Por: WorkSetup</span>
-                        <time datetime="2023-03-05">5 Mar 2023</time>
-                    </footer>
+                    <section class="index-blog-card__content">
+                        <h3>Optimiza tu setup de trabajo</h3>
+                        <p>Consejos para mejorar tu espacio de trabajo con perifericos, orden y pequenas mejoras que se notan en el dia a dia.</p>
+                        <section class="index-blog-card__meta">
+                            <span>Por: WorkSetup</span>
+                            <time datetime="2023-03-05">5 Mar 2023</time>
+                        </section>
+                    </section>
                 </article>
             </section>
-            
-            <aside>
-                <section>
-                    <h3>Categorías</h3>
+
+            <aside class="index-sidebar">
+                <section class="index-sidebar-card">
+                    <h3>Categorias</h3>
                     <nav>
                         <ul>
-                            <li><a href="#">Componentes PC</a></li>
-                            <li><a href="#">Periféricos</a></li>
-                            <li><a href="#">Guías y Tutoriales</a></li>
-                            <li><a href="#">Reviews</a></li>
-                            <li><a href="#">Ofertas Especiales</a></li>
+                            <li><a href="componentes.html">Componentes PC</a></li>
+                            <li><a href="busqueda_blogs.html#blog-setup">Perifericos</a></li>
+                            <li><a href="busqueda_blogs.html#blog-pc-gaming">Guias y Tutoriales</a></li>
+                            <li><a href="busqueda_blogs.html#blog-mejores-componentes">Reviews</a></li>
+                            <li><a href="register.html">Ofertas Especiales</a></li>
                         </ul>
                     </nav>
                 </section>
+
+                <section class="index-sidebar-card index-sidebar-card--accent">
+                    <h3>Compra con Confianza</h3>
+                    <ul>
+                        <li>Productos destacados y faciles de comparar</li>
+                        <li>Guias cortas para decidir mas rapido</li>
+                        <li>Acceso directo a soporte y categorias</li>
+                    </ul>
+                    <a href="SobreNosotros.html">Conoce el proyecto</a>
+                </section>
             </aside>
         </section>
-        
-        <section>
-            <h2>Productos Destacados</h2>
-            
-            <article>
-                <figure>
-                    <img src="imagenes/intel-core-i7.jpg" alt="Procesador Intel i7">
-                </figure>
-                <h3>Procesador Intel i7</h3>
-                <p>329,99 €</p>
-                <button>Ver Detalles</button>
-            </article>
-            
-            <article>
-                <figure>
-                    <img src="imagenes/ram 16gb.jpg" alt="Memoria RAM 16GB">
-                </figure>
-                <h3>Memoria RAM 16GB</h3>
-                <p>79,99 €</p>
-                <button>Ver Detalles</button>
-            </article>
-            
-            <article>
-                <figure>
-                    <img src="imagenes/ssd 1TB.jpg" alt="SSD 1TB NVMe">
-                </figure>
-                <h3>SSD 1TB NVMe</h3>
-                <p>89,99 €</p>
-                <button>Ver Detalles</button>
-            </article>
+
+        <section class="index-featured">
+            <header class="index-heading">
+                <p class="index-heading__eyebrow">Seleccion destacada</p>
+                <h2>Productos Destacados</h2>
+            </header>
+
+            <section class="index-product-grid">
+                <article class="index-product-card">
+                    <figure>
+                        <img src="imagenes/intel-core-i7.jpg" alt="Procesador Intel i7">
+                    </figure>
+                    <h3>Procesador Intel i7</h3>
+                    <p>329,99 EUR</p>
+                    <button type="button" onclick="window.location.href='componentes.html#procesadores'">Ver Detalles</button>
+                </article>
+
+                <article class="index-product-card">
+                    <figure>
+                        <img src="imagenes/ram 16gb.jpg" alt="Memoria RAM 16GB">
+                    </figure>
+                    <h3>Memoria RAM 16GB</h3>
+                    <p>79,99 EUR</p>
+                    <button type="button" onclick="window.location.href='componentes.html#memoria-ram'">Ver Detalles</button>
+                </article>
+
+                <article class="index-product-card">
+                    <figure>
+                        <img src="imagenes/ssd 1TB.jpg" alt="SSD 1TB NVMe">
+                    </figure>
+                    <h3>SSD 1TB NVMe</h3>
+                    <p>89,99 EUR</p>
+                    <button type="button" onclick="window.location.href='componentes.html#almacenamiento'">Ver Detalles</button>
+                </article>
+            </section>
         </section>
     </main>
-    
-    <footer>
+
+    <footer class="index-footer">
         <section>
             <section>
                 <h3>InformaticAlicante</h3>
-                <p>Tu tienda de confianza para componentes informáticos en Alicante.</p>
+                <p>Tu tienda de confianza para componentes informaticos en Alicante.</p>
             </section>
-            
+
             <section>
-                <h3>Enlaces Rápidos</h3>
+                <h3>Enlaces Rapidos</h3>
                 <nav>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Tienda</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="busqueda_blogs.html">Blog</a></li>
+                        <li><a href="componentes.html">Componentes</a></li>
+                        <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
             </section>
-            
+
             <section>
-                <h3>Categorías</h3>
+                <h3>Categorias</h3>
                 <nav>
                     <ul>
-                        <li><a href="#">Procesadores</a></li>
-                        <li><a href="#">Tarjetas gráficas</a></li>
-                        <li><a href="#">Memorias RAM</a></li>
-                        <li><a href="#">Almacenamiento</a></li>
+                        <li><a href="componentes.html#procesadores">Procesadores</a></li>
+                        <li><a href="componentes.html#tarjetas-graficas">Tarjetas graficas</a></li>
+                        <li><a href="componentes.html#memoria-ram">Memorias RAM</a></li>
+                        <li><a href="componentes.html#almacenamiento">Almacenamiento</a></li>
                     </ul>
                 </nav>
             </section>
-            
+
             <section>
                 <h3>Contacto</h3>
                 <address>
-                    <p>📍 Calle Tecnología 32</p>
-                    <p>📞 965 123 456</p>
-                    <p>✉️ info@infoalicante.es</p>
+                    <p>Calle Tecnologia 32</p>
+                    <p>965 123 456</p>
+                    <p>info@infoalicante.es</p>
                 </address>
             </section>
         </section>
-        
-        <p> 2025 informaticAlicante. Todos los derechos reservados.</p>
+
+        <p>2025 informaticAlicante. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
