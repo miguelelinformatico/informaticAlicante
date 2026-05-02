@@ -1,106 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Búsqueda de Blogs - informaticAlicante</title>
-	<link rel="stylesheet" href="css/stylesBlogs.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda de Blogs - informaticAlicante</title>
+    <link rel="stylesheet" href="css/stylesBlogs.css">
+    <link rel="stylesheet" href="css/stylesHeader.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<h1>informatic<span>Alicante</span></h1>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="busqueda_blogs.html">Blog</a></li>
-				<li><a href="componentes.html">Componentes</a></li>
-				<li><a href="#">Contacto</a></li>
-			</ul>
-			<section>
-				<button><a href="login.html">Iniciar Sesión</a></button>
-				<button><a href="register.html">Registrarse</a></button>
-			</section>
-		</nav>
-	</header>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="index.html" aria-label="Ir a inicio">
+                <h1>informatic<span>Alicante</span></h1>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link active" href="busqueda_blogs.html" aria-current="page">Blog</a></li>
+                <li><a class="nav-link" href="componentes.html">Componentes</a></li>
+                <li><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+            <section class="nav-actions">
+                <a class="nav-btn nav-btn--login" href="login.html">Iniciar Sesion</a>
+                <a class="nav-btn nav-btn--register" href="register.html">Registrarse</a>
+            </section>
+        </nav>
+    </header>
 
-	<main>
-		<section>
-			<h2>Buscar en el Blog</h2>
-			<p>Escribe palabras clave (título, autor o contenido) para filtrar las entradas del blog.</p>
-			<form>
-				<input type="search" placeholder="Buscar artículos, p. ej. 'PC Gaming'" aria-label="Buscar en el blog">
-				<button type="submit">Buscar</button>
-			</form>
-		</section>
+    <section class="blog-hero">
+        <section class="blog-hero__inner">
+            <section class="blog-hero__content">
+                <p class="blog-hero__eyebrow">Guias, reviews y consejos</p>
+                <h2>Contenido util para elegir mejor tus componentes</h2>
+                <p>Busca ideas rapidas, compara recomendaciones y encuentra articulos pensados para comprar hardware con mas criterio y menos ruido.</p>
+                <form class="blog-search">
+                    <input type="search" placeholder="Buscar articulos, por ejemplo 'PC Gaming'" aria-label="Buscar en el blog">
+                    <button type="submit">Buscar</button>
+                </form>
+            </section>
+            <aside class="blog-hero__panel">
+                <section class="blog-hero__stats">
+                    <article>
+                        <strong>3</strong>
+                        <span>Articulos destacados</span>
+                    </article>
+                    <article>
+                        <strong>Reviews</strong>
+                        <span>Y guias faciles de leer</span>
+                    </article>
+                </section>
+                <ul class="blog-hero__highlights">
+                    <li>Consejos rapidos para montar y mejorar tu equipo</li>
+                    <li>Lectura clara, sin tecnicismos innecesarios</li>
+                    <li>Acceso directo a categorias y entradas recientes</li>
+                </ul>
+            </aside>
+        </section>
+    </section>
 
-		<article>
-			<h2>Resultados de la búsqueda <span id="resultsCount"></span></h2>
-			<section id="posts">
-				 <article>
-                    <figure>
-                        <img src="imagenes/Montar-PC-2.jpg" alt="Imagen del Post">
-                    </figure>
-                    <h3>Guía para construir tu primer PC Gaming</h3>
-                    <p>Aprende los pasos esenciales para montar tu propio ordenador gaming sin complicaciones...</p>
-                    <footer>
-                        <span>Por: Admin</span>
-                        <time datetime="2023-03-15">15 Mar 2023</time>
-                    </footer>
-                </article>
-				
-				<article>
-                    <figure>
-                        <img src="imagenes/mejores-componentes.jpg" alt="Imagen del Post">
-                    </figure>
-                    <h3>Los mejores componentes</h3>
-                    <p>Review de los procesadores, tarjetas gráficas y memorias más destacadas del año...</p>
-                    <footer>
-                        <span>Por: TecnoAlicante</span>
-                        <time datetime="2023-03-10">10 Mar 2023</time>
-                    </footer>
-                </article>
+    <main class="blog-main">
+        <section class="blog-layout">
+            <section class="blog-results">
+                <header class="blog-heading">
+                    <p class="blog-heading__eyebrow">Seleccion editorial</p>
+                    <h2>Resultados del Blog <span id="resultsCount">3 articulos</span></h2>
+                </header>
 
-				<article>
-                    <figure>
-                        <img src="imagenes/set-up.jpg" alt="Imagen del Post">
-                    </figure>
-                    <h3>Optimiza tu setup de trabajo</h3>
-                    <p>Consejos para mejorar tu espacio de trabajo con los periféricos adecuados...</p>
-                    <footer>
-                        <span>Por: WorkSetup</span>
-                        <time datetime="2023-03-05">5 Mar 2023</time>
-                    </footer>
-                </article>
-			</section>
-			
-			<section id="noResults" hidden>
-				<p>No se encontraron resultados para su búsqueda.</p>
-			</section>
-		</article>
+                <section id="posts">
+                    <article class="blog-post-card" id="blog-pc-gaming">
+                        <figure>
+                            <img src="imagenes/Montar-PC-2.jpg" alt="Imagen del post sobre PC Gaming">
+                        </figure>
+                        <section class="blog-post-card__content">
+                            <h3>Guia para construir tu primer PC Gaming</h3>
+                            <p>Aprende los pasos esenciales para montar tu propio ordenador gaming sin complicaciones, evitando errores comunes y entendiendo cada decision importante.</p>
+                            <section class="blog-post-card__actions">
+                                <section class="blog-post-card__meta">
+                                    <span>Por: Admin</span>
+                                    <time datetime="2023-03-15">15 Mar 2023</time>
+                                </section>
+                                <a href="#blog-pc-gaming">Leer articulo</a>
+                            </section>
+                        </section>
+                    </article>
 
-		<aside>
-			<section>
-				<h3>Categorías</h3>
-				<ul id="categoriesList">
-					<li><a href="#" data-cat="Guías y Tutoriales">Guías y Tutoriales</a></li>
-					<li><a href="#" data-cat="Reviews">Reviews</a></li>
-					<li><a href="#" data-cat="Periféricos">Periféricos</a></li>
-				</ul>
-			</section>
+                    <article class="blog-post-card" id="blog-mejores-componentes">
+                        <figure>
+                            <img src="imagenes/mejores-componentes.jpg" alt="Imagen del post sobre mejores componentes">
+                        </figure>
+                        <section class="blog-post-card__content">
+                            <h3>Los mejores componentes</h3>
+                            <p>Una review rapida de procesadores, tarjetas graficas y memorias destacadas para orientar una compra mas segura sin revisar decenas de fichas tecnicas.</p>
+                            <section class="blog-post-card__actions">
+                                <section class="blog-post-card__meta">
+                                    <span>Por: TecnoAlicante</span>
+                                    <time datetime="2023-03-10">10 Mar 2023</time>
+                                </section>
+                                <a href="#blog-mejores-componentes">Leer articulo</a>
+                            </section>
+                        </section>
+                    </article>
 
-			<section>
-				<h3>Entradas Recientes</h3>
-				<ul id="recentList">
-					<li><a href="#">Guía para construir tu primer PC Gaming</a></li>
-					<li><a href="#">Los mejores componentes</a></li>
-					<li><a href="#">Optimiza tu setup de trabajo</a></li>
-				</ul>
-			</section>
-		</aside>
-	</main>
+                    <article class="blog-post-card" id="blog-setup">
+                        <figure>
+                            <img src="imagenes/set-up.jpg" alt="Imagen del post sobre setup de trabajo">
+                        </figure>
+                        <section class="blog-post-card__content">
+                            <h3>Optimiza tu setup de trabajo</h3>
+                            <p>Consejos para mejorar tu espacio de trabajo con perifericos adecuados, mejor organizacion y pequenos ajustes que hacen mas comodo el dia a dia.</p>
+                            <section class="blog-post-card__actions">
+                                <section class="blog-post-card__meta">
+                                    <span>Por: WorkSetup</span>
+                                    <time datetime="2023-03-05">5 Mar 2023</time>
+                                </section>
+                                <a href="#blog-setup">Leer articulo</a>
+                            </section>
+                        </section>
+                    </article>
+                </section>
 
-	<footer>
-		<p>informaticAlicante</p>
-	</footer>
+                <section id="noResults" hidden>
+                    <p>No se encontraron resultados para tu busqueda.</p>
+                </section>
+            </section>
+
+            <aside class="blog-sidebar">
+                <section class="blog-sidebar-card">
+                    <h3>Categorias</h3>
+                    <ul id="categoriesList">
+                        <li><a href="#blog-pc-gaming" data-cat="Guias y Tutoriales">Guias y Tutoriales</a></li>
+                        <li><a href="#blog-mejores-componentes" data-cat="Reviews">Reviews</a></li>
+                        <li><a href="#blog-setup" data-cat="Perifericos">Perifericos</a></li>
+                    </ul>
+                </section>
+
+                <section class="blog-sidebar-card">
+                    <h3>Entradas Recientes</h3>
+                    <ul id="recentList">
+                        <li><a href="#blog-pc-gaming">Guia para construir tu primer PC Gaming</a></li>
+                        <li><a href="#blog-mejores-componentes">Los mejores componentes</a></li>
+                        <li><a href="#blog-setup">Optimiza tu setup de trabajo</a></li>
+                    </ul>
+                </section>
+
+                <section class="blog-sidebar-card blog-sidebar-card--accent">
+                    <h3>Atajos Utiles</h3>
+                    <ul>
+                        <li><a href="componentes.html">Ir al catalogo de componentes</a></li>
+                        <li><a href="SobreNosotros.html">Conocer el proyecto</a></li>
+                        <li><a href="contacto.html">Hablar con nosotros</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="blog-footer">
+        <section>
+            <section>
+                <h3>InformaticAlicante</h3>
+                <p>Guias practicas, reviews y contenido util para ayudarte a comprar hardware con mas confianza.</p>
+            </section>
+
+            <section>
+                <h3>Enlaces Rapidos</h3>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="busqueda_blogs.html">Blog</a></li>
+                        <li><a href="componentes.html">Componentes</a></li>
+                        <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section>
+                <h3>Temas</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#blog-pc-gaming">Guias</a></li>
+                        <li><a href="#blog-mejores-componentes">Reviews</a></li>
+                        <li><a href="#blog-setup">Perifericos</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section>
+                <h3>Contacto</h3>
+                <address>
+                    <p>Calle Tecnologia 32</p>
+                    <p>965 123 456</p>
+                    <p>info@infoalicante.es</p>
+                </address>
+            </section>
+        </section>
+
+        <p>2025 informaticAlicante. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
