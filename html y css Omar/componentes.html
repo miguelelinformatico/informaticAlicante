@@ -1,24 +1,30 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Componentes - informaticAlicante</title>
-    <link rel="stylesheet" href="./stylesComponentes.css">
+    <link rel="stylesheet" href="css/stylesComponentes.css">
+    <link rel="stylesheet" href="css/stylesHeader.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <h1>informatic<span>Alicante</span></h1>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="busqueda_blogs.html">Blog</a></li>
-                <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="index.html" aria-label="Ir a inicio">
+                <h1>informatic<span>Alicante</span></h1>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="busqueda_blogs.html">Blog</a></li>
+                <li><a class="nav-link active" href="componentes.html" aria-current="page">Componentes</a></li>
+                <li><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
-            <section>
-                <button><a href="login.html">Iniciar Sesión</a></button>
-                <button><a href="register.html">Registrarse</a></button>
+            <section class="nav-actions">
+                <a class="nav-btn nav-btn--login" href="login.html">Iniciar Sesion</a>
+                <a class="nav-btn nav-btn--register" href="register.html">Registrarse</a>
             </section>
         </nav>
     </header>
@@ -30,315 +36,377 @@
 
     <main>
         <section class="catalog-layout">
-            <div class="catalog-content">
+            <section class="catalog-content">
 
-                <!-- FILA 1: Procesadores + Tarjetas Gráficas -->
-                <div class="categoria-row">
+                <section class="categoria-row">
                     <section class="categoria-bloque">
                         <h2 id="procesadores">Procesadores</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
                                 <figure><img src="imagenes/intel-core-i7.jpg" alt="Intel Core i7"></figure>
                                 <h3>Intel Core i7-13700K</h3>
                                 <p>Procesador de última generación, 16 núcleos, hasta 5.4 GHz</p>
-                                <section><span>549,99 €</span><button>Comprar</button></section>
+                                <section><span>549,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-1">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/amd-ryzen-7-7700x.jpg" alt="AMD Ryzen"></figure>
                                 <h3>AMD Ryzen 7 7700X</h3>
                                 <p>Procesador Ryzen de alto rendimiento, 8 núcleos, 16 hilos</p>
-                                <section><span>399,99 €</span><button>Comprar</button></section>
+                                <section><span>399,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-2">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/intel-core-i5-14600k.jpg" alt="Intel Core i5"></figure>
                                 <h3>Intel Core i5-14600K</h3>
                                 <p>Procesador versátil, 14 núcleos, hasta 5.1 GHz</p>
-                                <section><span>299,99 €</span><button>Comprar</button></section>
+                                <section><span>299,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-3">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/amd-ryzen-5-7600x.jpg" alt="AMD Ryzen 5"></figure>
                                 <h3>AMD Ryzen 5 7600X</h3>
                                 <p>Procesador equilibrado, 6 núcleos, 12 hilos</p>
-                                <section><span>249,99 €</span><button>Comprar</button></section>
+                                <section><span>249,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-4">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/i9.jpg" alt="Intel Core i9"></figure>
                                 <h3>Intel Core i9-13900K</h3>
                                 <p>Procesador top gaming, 24 núcleos, hasta 5.8 GHz</p>
-                                <section><span>799,99 €</span><button>Comprar</button></section>
+                                <section><span>799,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-5">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/amd-ryzen-9-7950x.jpg" alt="AMD Ryzen 9"></figure>
                                 <h3>AMD Ryzen 9 7950X</h3>
                                 <p>Procesador workstation, 16 núcleos, 32 hilos</p>
-                                <section><span>699,99 €</span><button>Comprar</button></section>
+                                <section><span>699,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-6">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
 
                     <section class="categoria-bloque">
                         <h2 id="tarjetas-graficas">Tarjetas Gráficas</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
-                                <figure><img src="imagenes/1657-asus-rog-strix-geforce-rtx-4080-oc-edition-16gb-gddr6x.jpg" alt="RTX 4080"></figure>
+                                <figure><img
+                                        src="imagenes/1657-asus-rog-strix-geforce-rtx-4080-oc-edition-16gb-gddr6x.jpg"
+                                        alt="RTX 4080"></figure>
                                 <h3>NVIDIA GeForce RTX 4080</h3>
                                 <p>Tarjeta gráfica profesional, 16GB GDDR6X, DLSS 3</p>
-                                <section><span>1.199,99 €</span><button>Comprar</button></section>
+                                <section><span>1.199,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-7">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1556-gigabyte-geforce-rtx-4070-windforce-oc-12gb-gddr6x-dlss3.jgp.webp" alt="RTX 4070"></figure>
+                                <figure><img
+                                        src="imagenes/1556-gigabyte-geforce-rtx-4070-windforce-oc-12gb-gddr6x-dlss3.jgp.webp"
+                                        alt="RTX 4070"></figure>
                                 <h3>NVIDIA GeForce RTX 4070</h3>
                                 <p>Tarjeta gráfica gaming premium, 12GB GDDR6X</p>
-                                <section><span>799,99 €</span><button>Comprar</button></section>
+                                <section><span>799,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-8">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1458-asus-dual-geforce-rtx-4060-evo-oc-edition-8gb-gddr6-dlss3.jpg" alt="RTX 4060"></figure>
+                                <figure><img
+                                        src="imagenes/1458-asus-dual-geforce-rtx-4060-evo-oc-edition-8gb-gddr6-dlss3.jpg"
+                                        alt="RTX 4060"></figure>
                                 <h3>NVIDIA GeForce RTX 4060</h3>
                                 <p>Tarjeta gráfica entry level, 8GB GDDR6</p>
-                                <section><span>299,99 €</span><button>Comprar</button></section>
+                                <section><span>299,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-9">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1588-xfx-speedster-merc310-amd-radeon-rx-7900xt-20gb-gddr6-foto.jpg" alt="AMD Radeon 7900XT"></figure>
+                                <figure><img
+                                        src="imagenes/1588-xfx-speedster-merc310-amd-radeon-rx-7900xt-20gb-gddr6-foto.jpg"
+                                        alt="AMD Radeon 7900XT"></figure>
                                 <h3>AMD Radeon RX 7900 XT</h3>
                                 <p>Tarjeta gráfica AMD profesional, 20GB GDDR6</p>
-                                <section><span>849,99 €</span><button>Comprar</button></section>
+                                <section><span>849,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-10">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1624-gigabyte-geforce-rtx-4090-gaming-oc-24gb-gddr6x.jpg" alt="RTX 4090"></figure>
+                                <figure><img src="imagenes/1624-gigabyte-geforce-rtx-4090-gaming-oc-24gb-gddr6x.jpg"
+                                        alt="RTX 4090"></figure>
                                 <h3>NVIDIA GeForce RTX 4090</h3>
                                 <p>Tarjeta gráfica flagship, 24GB GDDR6X</p>
-                                <section><span>1.799,99 €</span><button>Comprar</button></section>
+                                <section><span>1.799,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-11">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1570-asus-tuf-gaming-radeon-rx-7800-xt-oc-edition-16gb-gddr6.jpg" alt="AMD Radeon 7800XT"></figure>
+                                <figure><img
+                                        src="imagenes/1570-asus-tuf-gaming-radeon-rx-7800-xt-oc-edition-16gb-gddr6.jpg"
+                                        alt="AMD Radeon 7800XT"></figure>
                                 <h3>AMD Radeon RX 7800 XT</h3>
                                 <p>Tarjeta gráfica AMD gaming, 16GB GDDR6</p>
-                                <section><span>649,99 €</span><button>Comprar</button></section>
+                                <section><span>649,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-12">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
-                </div>
+                </section>
 
-                <!-- FILA 2: Memoria RAM + Almacenamiento -->
-                <div class="categoria-row">
+                <section class="categoria-row">
                     <section class="categoria-bloque">
                         <h2 id="memoria-ram">Memoria RAM</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
                                 <figure><img src="imagenes/ram 16gb.jpg" alt="RAM 16GB"></figure>
                                 <h3>Corsair Vengeance RGB Pro 16GB</h3>
                                 <p>Memoria RAM DDR4, 3200MHz, RGB personalizable</p>
-                                <section><span>79,99 €</span><button>Comprar</button></section>
+                                <section><span>79,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-13">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/ram 32 kingston.jpg" alt="RAM 32GB"></figure>
                                 <h3>Kingston Fury Beast 32GB</h3>
                                 <p>Memoria RAM DDR4, 3200MHz, para gaming intensivo</p>
-                                <section><span>149,99 €</span><button>Comprar</button></section>
+                                <section><span>149,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-14">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/16gb skill trident zjpg.jpg" alt="G.Skill Trident 16GB"></figure>
+                                <figure><img src="imagenes/16gb skill trident zjpg.jpg" alt="G.Skill Trident 16GB">
+                                </figure>
                                 <h3>G.Skill Trident Z5 16GB</h3>
                                 <p>Memoria RAM DDR5, 5600MHz, gaming premium</p>
-                                <section><span>119,99 €</span><button>Comprar</button></section>
+                                <section><span>119,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-15">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1979-hyperx-predator-ddr4-3200mhz-16gb-cl16.jpg" alt="HyperX Predator 16GB"></figure>
+                                <figure><img src="imagenes/1979-hyperx-predator-ddr4-3200mhz-16gb-cl16.jpg"
+                                        alt="HyperX Predator 16GB"></figure>
                                 <h3>HyperX Predator DDR4 16GB</h3>
                                 <p>Memoria RAM DDR4, 3200MHz, XMP 2.0</p>
-                                <section><span>94,99 €</span><button>Comprar</button></section>
+                                <section><span>94,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-16">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/crucial-ballistix-3200-ddr4-32gb-2x16gb-cl16-negro.jpg" alt="Crucial Ballistix 32GB"></figure>
+                                <figure><img src="imagenes/crucial-ballistix-3200-ddr4-32gb-2x16gb-cl16-negro.jpg"
+                                        alt="Crucial Ballistix 32GB"></figure>
                                 <h3>Crucial Ballistix 32GB</h3>
                                 <p>Memoria RAM DDR4, 3600MHz, rendimiento alto</p>
-                                <section><span>139,99 €</span><button>Comprar</button></section>
+                                <section><span>139,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-17">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/193-corsair-dominator-platinum-rgb-ddr5-6200mhz-32gb-2x16gb-cl36-blanca.jpg" alt="Corsair Dominator 32GB"></figure>
+                                <figure><img
+                                        src="imagenes/193-corsair-dominator-platinum-rgb-ddr5-6200mhz-32gb-2x16gb-cl36-blanca.jpg"
+                                        alt="Corsair Dominator 32GB"></figure>
                                 <h3>Corsair Dominator Platinum 32GB</h3>
                                 <p>Memoria RAM DDR5, 5600MHz, premium RGB</p>
-                                <section><span>179,99 €</span><button>Comprar</button></section>
+                                <section><span>179,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-18">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
 
                     <section class="categoria-bloque">
                         <h2 id="almacenamiento">Almacenamiento</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
                                 <figure><img src="imagenes/ssd 1TB.jpg" alt="SSD 1TB"></figure>
                                 <h3>Samsung 870 QVO 1TB SSD</h3>
                                 <p>SSD SATA de 2.5", velocidad hasta 560MB/s</p>
-                                <section><span>89,99 €</span><button>Comprar</button></section>
+                                <section><span>89,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-19">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/12tb-disco-ssd-7300mb-s-nvme.jpg" alt="NVMe M.2"></figure>
                                 <h3>WD Black SN850X 2TB NVMe</h3>
                                 <p>SSD M.2 NVMe PCIe 4.0, velocidad hasta 7100MB/s</p>
-                                <section><span>249,99 €</span><button>Comprar</button></section>
+                                <section><span>249,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-20">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1699-disco-duro-crucial-1tb-ssd-m2-pcie-50-11000mb-s-p5-plus-para-gaming-y-pc.jpg" alt="Crucial P5 Plus"></figure>
+                                <figure><img
+                                        src="imagenes/1699-disco-duro-crucial-1tb-ssd-m2-pcie-50-11000mb-s-p5-plus-para-gaming-y-pc.jpg"
+                                        alt="Crucial P5 Plus"></figure>
                                 <h3>Crucial P5 Plus 1TB NVMe</h3>
                                 <p>SSD M.2 NVMe PCIe 4.0, velocidad hasta 6600MB/s</p>
-                                <section><span>109,99 €</span><button>Comprar</button></section>
+                                <section><span>109,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-21">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/barracuda.jpg" alt="Seagate Barracuda"></figure>
                                 <h3>Seagate Barracuda Pro 4TB HDD</h3>
                                 <p>Disco duro SATA 3.5", 7200 RPM, almacenamiento masivo</p>
-                                <section><span>99,99 €</span><button>Comprar</button></section>
+                                <section><span>99,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-22">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1451-kingston-nv3-500gb-ssd-m2-nvme-2280-pcie-40-3d-nand.jpg" alt="Kingston A3000"></figure>
+                                <figure><img src="imagenes/1451-kingston-nv3-500gb-ssd-m2-nvme-2280-pcie-40-3d-nand.jpg"
+                                        alt="Kingston A3000"></figure>
                                 <h3>Kingston NV2 500GB NVMe</h3>
                                 <p>SSD M.2 NVMe, velocidad hasta 3500MB/s, compacto</p>
-                                <section><span>49,99 €</span><button>Comprar</button></section>
+                                <section><span>49,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-23">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/1839-samsung-990-evo-1tb-ssd-m2-pcie-40-x4-50-x2-nvme-20.jpg" alt="Samsung 970 EVO Plus"></figure>
+                                <figure><img src="imagenes/1839-samsung-990-evo-1tb-ssd-m2-pcie-40-x4-50-x2-nvme-20.jpg"
+                                        alt="Samsung 970 EVO Plus"></figure>
                                 <h3>Samsung 970 EVO Plus 1TB NVMe</h3>
                                 <p>SSD M.2 NVMe PCIe 3.0, velocidad hasta 5000MB/s</p>
-                                <section><span>119,99 €</span><button>Comprar</button></section>
+                                <section><span>119,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-24">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
-                </div>
+                </section>
 
-                <!-- FILA 3: Fuentes de Alimentación + Placas Base -->
-                <div class="categoria-row">
+                <section class="categoria-row">
                     <section class="categoria-bloque">
                         <h2 id="fuentes">Fuentes de Alimentación</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
                                 <figure><img src="imagenes/Corsair RM850e 850W.jpg" alt="PSU 850W"></figure>
                                 <h3>Corsair RM850e 850W</h3>
                                 <p>Fuente de alimentación modular, 80+ Gold, 10 años garantía</p>
-                                <section><span>139,99 €</span><button>Comprar</button></section>
+                                <section><span>139,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-25">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/EVGA SuperNOVA 1000 G6 1000W.jpg" alt="PSU 1000W"></figure>
                                 <h3>EVGA SuperNOVA 1000 G6 1000W</h3>
                                 <p>Fuente premium modular, 80+ Gold, protección completa</p>
-                                <section><span>179,99 €</span><button>Comprar</button></section>
+                                <section><span>179,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-26">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/Be Quiet! Dark Power Pro 650W.jpg" alt="PSU 650W"></figure>
                                 <h3>Be Quiet! Dark Power Pro 650W</h3>
                                 <p>Fuente modular 80+ Platinum, muy eficiente y silenciosa</p>
-                                <section><span>119,99 €</span><button>Comprar</button></section>
+                                <section><span>119,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-27">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/Seasonic FOCUS Gold 750W.jpg" alt="PSU 750W"></figure>
                                 <h3>Seasonic FOCUS Gold 750W</h3>
                                 <p>Fuente modular 80+ Gold, 12 años garantía, confiable</p>
-                                <section><span>99,99 €</span><button>Comprar</button></section>
+                                <section><span>99,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-28">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/MSI MPG A1200G PCIE5 1200W.jpg" alt="PSU 1200W"></figure>
                                 <h3>MSI MPG A1200G PCIE5 1200W</h3>
                                 <p>Fuente premium modular, 80+ Gold, PCIe 5.0 ready</p>
-                                <section><span>189,99 €</span><button>Comprar</button></section>
+                                <section><span>189,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-29">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/Corsair RM600e 600W.jpg" alt="PSU 600W"></figure>
                                 <h3>Corsair RM600e 600W</h3>
                                 <p>Fuente modular compacta, 80+ Gold, perfecta para builds medianos</p>
-                                <section><span>79,99 €</span><button>Comprar</button></section>
+                                <section><span>79,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-30">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
 
                     <section class="categoria-bloque">
                         <h2 id="placas-base">Placas Base</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
                                 <figure><img src="imagenes/ASUS ROG STRIX B850-E.jpg" alt="Motherboard"></figure>
                                 <h3>ASUS ROG STRIX B850-E</h3>
                                 <p>Placa base AM5, PCIe 5.0, WiFi 7, para Ryzen 9000</p>
-                                <section><span>399,99 €</span><button>Comprar</button></section>
+                                <section><span>399,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-31">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/MSI MPG Z790 EDGE WiFi.jpg" alt="Motherboard Intel"></figure>
                                 <h3>MSI MPG Z790 EDGE WiFi</h3>
                                 <p>Placa base LGA1700, PCIe 5.0, WiFi 6E</p>
-                                <section><span>349,99 €</span><button>Comprar</button></section>
+                                <section><span>349,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-32">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/Gigabyte B850 AORUS Pro.jpg" alt="Gigabyte B850"></figure>
                                 <h3>Gigabyte B850 AORUS Pro</h3>
                                 <p>Placa base AM5, PCIe 5.0, BIOS avanzado</p>
-                                <section><span>349,99 €</span><button>Comprar</button></section>
+                                <section><span>349,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-33">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/ASRock B760 Pro RS.jpg" alt="ASRock B760"></figure>
                                 <h3>ASRock B760 Pro RS</h3>
                                 <p>Placa base LGA1700, relación precio-rendimiento excelente</p>
-                                <section><span>149,99 €</span><button>Comprar</button></section>
+                                <section><span>149,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-34">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/ASUS TUF Z790-PLUS WIFI.jpg" alt="ASUS Z790"></figure>
                                 <h3>ASUS TUF Z790-PLUS WIFI</h3>
                                 <p>Placa base LGA1700, TUF Gaming, WiFi 6E</p>
-                                <section><span>199,99 €</span><button>Comprar</button></section>
+                                <section><span>199,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-35">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/ASRock B650E Steel Legend.jpg" alt="ASRock B650"></figure>
                                 <h3>ASRock B650E Steel Legend</h3>
                                 <p>Placa base AM5, buena relación precio-rendimiento</p>
-                                <section><span>199,99 €</span><button>Comprar</button></section>
+                                <section><span>199,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-36">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
-                </div>
+                </section>
 
-                <!-- FILA 4: Refrigeración (categoría única, centrada) -->
-                <div class="categoria-row">
+                <section class="categoria-row categoria-row--centrada">
                     <section class="categoria-bloque">
                         <h2 id="refrigeracion">Refrigeración</h2>
-                        <div class="productos-grid">
+                        <section class="productos-grid">
                             <article>
                                 <figure><img src="imagenes/Noctua NH-D15 Chromax.jpg" alt="Cooler CPU"></figure>
                                 <h3>Noctua NH-D15 Chromax</h3>
                                 <p>Enfriador de aire dual-tower, ultra silencioso</p>
-                                <section><span>99,99 €</span><button>Comprar</button></section>
+                                <section><span>99,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-37">A&ntilde;adir</label></section>
                             </article>
                             <article>
                                 <figure><img src="imagenes/CORSAIR iCUE H150i Elite.jpg" alt="AIO Cooler"></figure>
                                 <h3>CORSAIR iCUE H150i Elite</h3>
                                 <p>Refrigeración líquida All-in-One, 360mm, RGB</p>
-                                <section><span>249,99 €</span><button>Comprar</button></section>
+                                <section><span>249,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-38">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/Be Quiet! Dark Rock Pro 4.jpg" alt="Be Quiet Dark Rock Pro"></figure>
+                                <figure><img src="imagenes/Be Quiet! Dark Rock Pro 4.jpg" alt="Be Quiet Dark Rock Pro">
+                                </figure>
                                 <h3>Be Quiet! Dark Rock Pro 4</h3>
                                 <p>Enfriador de aire de gama alta, rendimiento superior</p>
-                                <section><span>79,99 €</span><button>Comprar</button></section>
+                                <section><span>79,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-39">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/Arctic Liquid Freezer III 360mm.jpg" alt="Arctic Liquid Freezer"></figure>
+                                <figure><img src="imagenes/Arctic Liquid Freezer III 360mm.jpg"
+                                        alt="Arctic Liquid Freezer"></figure>
                                 <h3>Arctic Liquid Freezer III 360mm</h3>
                                 <p>Refrigeración líquida eficiente, compatible universal</p>
-                                <section><span>149,99 €</span><button>Comprar</button></section>
+                                <section><span>149,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-40">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/Lian Li Galahad 240 SL AIO.jpg" alt="Lian Li Galahad"></figure>
+                                <figure><img src="imagenes/Lian Li Galahad 240 SL AIO.jpg" alt="Lian Li Galahad">
+                                </figure>
                                 <h3>Lian Li Galahad 240 SL AIO</h3>
                                 <p>Refrigeración líquida compacta, diseño elegante</p>
-                                <section><span>119,99 €</span><button>Comprar</button></section>
+                                <section><span>119,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-41">A&ntilde;adir</label></section>
                             </article>
                             <article>
-                                <figure><img src="imagenes/Arctic Freezer 34 eSports.jpg" alt="Arctic Freezer 34"></figure>
+                                <figure><img src="imagenes/Arctic Freezer 34 eSports.jpg" alt="Arctic Freezer 34">
+                                </figure>
                                 <h3>Arctic Freezer 34 eSports</h3>
                                 <p>Enfriador de aire budget, excelente relación precio</p>
-                                <section><span>39,99 €</span><button>Comprar</button></section>
+                                <section><span>39,99 €</span><label class="cart-buy-button"
+                                        for="cart-item-42">A&ntilde;adir</label></section>
                             </article>
-                        </div>
+                        </section>
                     </section>
-                </div>
+                </section>
 
-            </div>
+            </section>
 
             <aside>
                 <section>
@@ -355,15 +423,461 @@
                         </ul>
                     </nav>
                 </section>
+                <section class="cart-host-section">
+                    <section class="cart-panel">
+                        <h3>Tu carrito</h3>
+                        <p class="cart-panel__helper">Pulsa en <strong>A&ntilde;adir</strong> y el componente
+                            aparecer&aacute; aqu&iacute; a la derecha.</p>
+                        <section class="cart-panel__items">
+                            <input class="cart-toggle" type="checkbox" id="cart-item-1">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/intel-core-i7.jpg"
+                                        alt="Intel Core i7"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Intel Core i7-13700K</h4>
+                                    <p>549,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-1">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-2">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/amd-ryzen-7-7700x.jpg"
+                                        alt="AMD Ryzen"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>AMD Ryzen 7 7700X</h4>
+                                    <p>399,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-2">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-3">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/intel-core-i5-14600k.jpg"
+                                        alt="Intel Core i5"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Intel Core i5-14600K</h4>
+                                    <p>299,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-3">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-4">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/amd-ryzen-5-7600x.jpg"
+                                        alt="AMD Ryzen 5"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>AMD Ryzen 5 7600X</h4>
+                                    <p>249,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-4">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-5">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/i9.jpg" alt="Intel Core i9">
+                                </figure>
+                                <section class="cart-entry__content">
+                                    <h4>Intel Core i9-13900K</h4>
+                                    <p>799,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-5">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-6">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/amd-ryzen-9-7950x.jpg"
+                                        alt="AMD Ryzen 9"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>AMD Ryzen 9 7950X</h4>
+                                    <p>699,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-6">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-7">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1657-asus-rog-strix-geforce-rtx-4080-oc-edition-16gb-gddr6x.jpg"
+                                        alt="RTX 4080"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>NVIDIA GeForce RTX 4080</h4>
+                                    <p>1.199,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-7">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-8">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1556-gigabyte-geforce-rtx-4070-windforce-oc-12gb-gddr6x-dlss3.jgp.webp"
+                                        alt="RTX 4070"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>NVIDIA GeForce RTX 4070</h4>
+                                    <p>799,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-8">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-9">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1458-asus-dual-geforce-rtx-4060-evo-oc-edition-8gb-gddr6-dlss3.jpg"
+                                        alt="RTX 4060"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>NVIDIA GeForce RTX 4060</h4>
+                                    <p>299,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-9">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-10">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1588-xfx-speedster-merc310-amd-radeon-rx-7900xt-20gb-gddr6-foto.jpg"
+                                        alt="AMD Radeon 7900XT"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>AMD Radeon RX 7900 XT</h4>
+                                    <p>849,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-10">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-11">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1624-gigabyte-geforce-rtx-4090-gaming-oc-24gb-gddr6x.jpg"
+                                        alt="RTX 4090"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>NVIDIA GeForce RTX 4090</h4>
+                                    <p>1.799,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-11">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-12">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1570-asus-tuf-gaming-radeon-rx-7800-xt-oc-edition-16gb-gddr6.jpg"
+                                        alt="AMD Radeon 7800XT"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>AMD Radeon RX 7800 XT</h4>
+                                    <p>649,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-12">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-13">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ram 16gb.jpg" alt="RAM 16GB">
+                                </figure>
+                                <section class="cart-entry__content">
+                                    <h4>Corsair Vengeance RGB Pro 16GB</h4>
+                                    <p>79,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-13">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-14">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ram 32 kingston.jpg"
+                                        alt="RAM 32GB"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Kingston Fury Beast 32GB</h4>
+                                    <p>149,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-14">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-15">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/16gb skill trident zjpg.jpg"
+                                        alt="G.Skill Trident 16GB"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>G.Skill Trident Z5 16GB</h4>
+                                    <p>119,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-15">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-16">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1979-hyperx-predator-ddr4-3200mhz-16gb-cl16.jpg"
+                                        alt="HyperX Predator 16GB"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>HyperX Predator DDR4 16GB</h4>
+                                    <p>94,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-16">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-17">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/crucial-ballistix-3200-ddr4-32gb-2x16gb-cl16-negro.jpg"
+                                        alt="Crucial Ballistix 32GB"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Crucial Ballistix 32GB</h4>
+                                    <p>139,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-17">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-18">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/193-corsair-dominator-platinum-rgb-ddr5-6200mhz-32gb-2x16gb-cl36-blanca.jpg"
+                                        alt="Corsair Dominator 32GB"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Corsair Dominator Platinum 32GB</h4>
+                                    <p>179,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-18">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-19">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ssd 1TB.jpg" alt="SSD 1TB">
+                                </figure>
+                                <section class="cart-entry__content">
+                                    <h4>Samsung 870 QVO 1TB SSD</h4>
+                                    <p>89,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-19">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-20">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/12tb-disco-ssd-7300mb-s-nvme.jpg"
+                                        alt="NVMe M.2"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>WD Black SN850X 2TB NVMe</h4>
+                                    <p>249,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-20">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-21">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1699-disco-duro-crucial-1tb-ssd-m2-pcie-50-11000mb-s-p5-plus-para-gaming-y-pc.jpg"
+                                        alt="Crucial P5 Plus"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Crucial P5 Plus 1TB NVMe</h4>
+                                    <p>109,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-21">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-22">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/barracuda.jpg"
+                                        alt="Seagate Barracuda"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Seagate Barracuda Pro 4TB HDD</h4>
+                                    <p>99,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-22">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-23">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1451-kingston-nv3-500gb-ssd-m2-nvme-2280-pcie-40-3d-nand.jpg"
+                                        alt="Kingston A3000"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Kingston NV2 500GB NVMe</h4>
+                                    <p>49,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-23">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-24">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/1839-samsung-990-evo-1tb-ssd-m2-pcie-40-x4-50-x2-nvme-20.jpg"
+                                        alt="Samsung 970 EVO Plus"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Samsung 970 EVO Plus 1TB NVMe</h4>
+                                    <p>119,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-24">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-25">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Corsair RM850e 850W.jpg"
+                                        alt="PSU 850W"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Corsair RM850e 850W</h4>
+                                    <p>139,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-25">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-26">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/EVGA SuperNOVA 1000 G6 1000W.jpg"
+                                        alt="PSU 1000W"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>EVGA SuperNOVA 1000 G6 1000W</h4>
+                                    <p>179,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-26">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-27">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Be Quiet! Dark Power Pro 650W.jpg"
+                                        alt="PSU 650W"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Be Quiet! Dark Power Pro 650W</h4>
+                                    <p>119,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-27">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-28">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Seasonic FOCUS Gold 750W.jpg"
+                                        alt="PSU 750W"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Seasonic FOCUS Gold 750W</h4>
+                                    <p>99,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-28">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-29">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/MSI MPG A1200G PCIE5 1200W.jpg"
+                                        alt="PSU 1200W"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>MSI MPG A1200G PCIE5 1200W</h4>
+                                    <p>189,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-29">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-30">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Corsair RM600e 600W.jpg"
+                                        alt="PSU 600W"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Corsair RM600e 600W</h4>
+                                    <p>79,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-30">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-31">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ASUS ROG STRIX B850-E.jpg"
+                                        alt="Motherboard"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>ASUS ROG STRIX B850-E</h4>
+                                    <p>399,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-31">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-32">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/MSI MPG Z790 EDGE WiFi.jpg"
+                                        alt="Motherboard Intel"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>MSI MPG Z790 EDGE WiFi</h4>
+                                    <p>349,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-32">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-33">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Gigabyte B850 AORUS Pro.jpg"
+                                        alt="Gigabyte B850"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Gigabyte B850 AORUS Pro</h4>
+                                    <p>349,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-33">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-34">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ASRock B760 Pro RS.jpg"
+                                        alt="ASRock B760"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>ASRock B760 Pro RS</h4>
+                                    <p>149,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-34">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-35">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ASUS TUF Z790-PLUS WIFI.jpg"
+                                        alt="ASUS Z790"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>ASUS TUF Z790-PLUS WIFI</h4>
+                                    <p>199,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-35">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-36">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/ASRock B650E Steel Legend.jpg"
+                                        alt="ASRock B650"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>ASRock B650E Steel Legend</h4>
+                                    <p>199,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-36">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-37">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Noctua NH-D15 Chromax.jpg"
+                                        alt="Cooler CPU"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Noctua NH-D15 Chromax</h4>
+                                    <p>99,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-37">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-38">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/CORSAIR iCUE H150i Elite.jpg"
+                                        alt="AIO Cooler"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>CORSAIR iCUE H150i Elite</h4>
+                                    <p>249,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-38">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-39">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Be Quiet! Dark Rock Pro 4.jpg"
+                                        alt="Be Quiet Dark Rock Pro"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Be Quiet! Dark Rock Pro 4</h4>
+                                    <p>79,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-39">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-40">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img
+                                        src="imagenes/Arctic Liquid Freezer III 360mm.jpg" alt="Arctic Liquid Freezer">
+                                </figure>
+                                <section class="cart-entry__content">
+                                    <h4>Arctic Liquid Freezer III 360mm</h4>
+                                    <p>149,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-40">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-41">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Lian Li Galahad 240 SL AIO.jpg"
+                                        alt="Lian Li Galahad"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Lian Li Galahad 240 SL AIO</h4>
+                                    <p>119,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-41">Quitar</label>
+                            </article>
+                            <input class="cart-toggle" type="checkbox" id="cart-item-42">
+                            <article class="cart-entry">
+                                <figure class="cart-entry__media"><img src="imagenes/Arctic Freezer 34 eSports.jpg"
+                                        alt="Arctic Freezer 34"></figure>
+                                <section class="cart-entry__content">
+                                    <h4>Arctic Freezer 34 eSports</h4>
+                                    <p>39,99 €</p>
+                                </section>
+                                <label class="cart-entry__remove" for="cart-item-42">Quitar</label>
+                            </article>
+                        </section>
+                        <p class="cart-panel__empty">Todav&iacute;a no has a&ntilde;adido componentes.</p>
+                        <p class="cart-panel__summary">Los productos seleccionados quedan marcados dentro del carrito.
+                        </p>
+                    </section>
+                </section>
             </aside>
         </section>
     </main>
-    
+
     <footer>
         <section>
             <section>
                 <h3>InformaticAlicante</h3>
-                <p>Tu tienda de confianza para componentes informáticos en Alicante. Ofertas exclusivas en todos nuestros productos.</p>
+                <p>Tu tienda de confianza para componentes informáticos en Alicante. Ofertas exclusivas en todos
+                    nuestros productos.</p>
             </section>
             <section>
                 <h3>Enlaces Rápidos</h3>
@@ -372,6 +886,7 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="busqueda_blogs.html">Blog</a></li>
                         <li><a href="componentes.html">Componentes</a></li>
+                        <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
@@ -380,10 +895,10 @@
                 <h3>Categorías</h3>
                 <nav>
                     <ul>
-                        <li><a href="#">Procesadores</a></li>
-                        <li><a href="#">Tarjetas gráficas</a></li>
-                        <li><a href="#">Memorias RAM</a></li>
-                        <li><a href="#">Almacenamiento</a></li>
+                        <li><a href="#procesadores">Procesadores</a></li>
+                        <li><a href="#tarjetas-graficas">Tarjetas gráficas</a></li>
+                        <li><a href="#memoria-ram">Memorias RAM</a></li>
+                        <li><a href="#almacenamiento">Almacenamiento</a></li>
                     </ul>
                 </nav>
             </section>
@@ -398,5 +913,7 @@
         </section>
         <p> 2025 informaticAlicante. Todos los derechos reservados.</p>
     </footer>
+
 </body>
+
 </html>
