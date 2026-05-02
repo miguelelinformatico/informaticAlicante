@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - informaticAlicante</title>
     <link rel="stylesheet" href="css/stylesContacto.css">
+    <link rel="stylesheet" href="css/stylesHeader.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>informatic<span>Alicante</span></h1>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="busqueda_blogs.html">Blog</a></li>
-                <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="index.html" aria-label="Ir a inicio">
+                <h1>informatic<span>Alicante</span></h1>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="busqueda_blogs.html">Blog</a></li>
+                <li><a class="nav-link" href="componentes.html">Componentes</a></li>
+                <li><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a></li>
             </ul>
-            <section>
-                <button><a href="login.html">Iniciar Sesión</a></button>
-                <button><a href="register.html">Registrarse</a></button>
+            <section class="nav-actions">
+                <a class="nav-btn nav-btn--login" href="login.html">Iniciar Sesion</a>
+                <a class="nav-btn nav-btn--register" href="register.html">Registrarse</a>
             </section>
         </nav>
     </header>
@@ -110,6 +114,7 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="busqueda_blogs.html">Blog</a></li>
                         <li><a href="componentes.html">Componentes</a></li>
+                        <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
@@ -119,10 +124,10 @@
                 <h3>Categorías</h3>
                 <nav>
                     <ul>
-                        <li><a href="#">Procesadores</a></li>
-                        <li><a href="#">Tarjetas gráficas</a></li>
-                        <li><a href="#">Memorias RAM</a></li>
-                        <li><a href="#">Almacenamiento</a></li>
+                        <li><a href="componentes.html#procesadores">Procesadores</a></li>
+                        <li><a href="componentes.html#tarjetas-graficas">Tarjetas gráficas</a></li>
+                        <li><a href="componentes.html#memoria-ram">Memorias RAM</a></li>
+                        <li><a href="componentes.html#almacenamiento">Almacenamiento</a></li>
                     </ul>
                 </nav>
             </section>
