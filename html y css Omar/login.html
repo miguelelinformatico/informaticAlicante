@@ -3,59 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - informaticAlicante</title>
+    <title>Iniciar Sesion - informaticAlicante</title>
     <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="stylesheet" href="css/stylesHeader.css">
 </head>
 <body>
-    <header>
-        <hgroup>
-            <h1><span style="color: #2563eb;">informatic</span><span style="color: #f97316;">Alicante</span></h1>
-        </hgroup>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="busqueda_blogs.html">Blog</a></li>
-                <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="register.html" style="color:#2563eb; font-weight:600">Registrarse</a></li>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="index.html" aria-label="Ir a inicio">
+                <h1>informatic<span>Alicante</span></h1>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="busqueda_blogs.html">Blog</a></li>
+                <li><a class="nav-link" href="componentes.html">Componentes</a></li>
+                <li><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
+            <section class="nav-actions">
+                <a class="nav-btn nav-btn--login nav-btn--active" href="login.html" aria-current="page">Iniciar Sesion</a>
+                <a class="nav-btn nav-btn--register" href="register.html">Registrarse</a>
+            </section>
         </nav>
     </header>
-    
-    <main>
-        <section>
-            <hgroup>
-                <h1><span style="color: #2563eb;">informatic</span><span style="color: #f97316;">Alicante</span></h1>
-                <h2>Accede a tu cuenta de informaticAlicante</h2>
-            </hgroup>
+
+    <main class="login-main">
+        <section class="login-layout">
+            <section class="login-showcase">
+                <header class="login-showcase__header">
+                    <p class="login-showcase__eyebrow">Area de clientes</p>
+                    <h2>Vuelve a tu cuenta y sigue preparando tu proximo equipo con mejores decisiones.</h2>
+                    <p>Accede a tus favoritos, retoma comparativas guardadas y mantente cerca de las ofertas y guias que mas te interesan.</p>
+                </header>
+
+                <figure class="login-showcase__media">
+                    <img src="imagenes/Montar-PC-2.jpg" alt="Montaje de ordenador con componentes y teclado">
+                </figure>
+
+                <section class="login-showcase__metrics">
+                    <article>
+                        <strong>Favoritos</strong>
+                        <span>Guarda productos y vuelve a compararlos cuando quieras.</span>
+                    </article>
+                    <article>
+                        <strong>Guias</strong>
+                        <span>Recupera articulos utiles para seguir tu compra con calma.</span>
+                    </article>
+                    <article>
+                        <strong>Soporte</strong>
+                        <span>Contacta rapido si necesitas una recomendacion cercana.</span>
+                    </article>
+                </section>
+
+                <ul class="login-showcase__list">
+                    <li>Acceso rapido a componentes destacados y categorias utiles.</li>
+                    <li>Una cuenta para moverte por la tienda y el blog sin perder el hilo.</li>
+                    <li>Entorno claro, directo y pensado para volver a lo importante.</li>
+                </ul>
+            </section>
+
+            <section class="login-panel">
+                <header class="login-panel__header">
+                    <p class="login-panel__eyebrow">Iniciar sesion</p>
+                    <h1>Bienvenido de nuevo</h1>
+                    <p>Entra en tu espacio de informaticAlicante y continua justo donde lo dejaste.</p>
+                </header>
+
+                <form id="loginForm" class="login-form" novalidate>
+                    <fieldset class="login-form__group">
+                        <label for="email">Correo electronico</label>
+                        <input id="email" name="email" type="email" inputmode="email" autocomplete="username" required placeholder="tucorreo@ejemplo.com">
+                        <small id="emailError" class="error login-form__error" aria-live="polite"></small>
+                    </fieldset>
+
+                    <fieldset class="login-form__group">
+                        <label for="password">Contrasena</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Introduce tu contrasena">
+                        <small id="passwordError" class="error login-form__error" aria-live="polite"></small>
+                    </fieldset>
+
+                    <section class="login-form__options">
+                        <label class="login-form__check" for="remember">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span>Recuerdame</span>
+                        </label>
+                        <a href="contacto.html" id="forgot" class="login-form__link">He olvidado mi contrasena</a>
+                    </section>
+
+                    <section class="login-form__actions">
+                        <button type="submit" class="login-form__primary">Entrar</button>
+                        <button type="button" id="btnRegister" class="login-form__secondary" onclick="window.location.href='register.html'">Crear cuenta</button>
+                    </section>
+
+                    <p class="login-form__footnote">No tienes cuenta todavia? <a href="register.html" id="linkRegister">Registrate aqui</a></p>
+                </form>
+
+                <aside class="login-panel__aside">
+                    <strong>Tu cuenta te acompaña</strong>
+                    <p>Vuelve a tus lecturas, revisa componentes y ten siempre a mano el siguiente paso de tu compra.</p>
+                </aside>
+            </section>
         </section>
-
-        <form id="loginForm" novalidate>
-            <fieldset>
-                <label for="email">Correo electrónico</label>
-                <input id="email" name="email" type="email" inputmode="email" autocomplete="username" required placeholder="tucorreo@ejemplo.com">
-                <small id="emailError" class="error" aria-live="polite"></small>
-            </fieldset>
-
-            <fieldset>
-                <label for="password">Contraseña</label>
-                <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Introduce tu contraseña">
-                <small id="passwordError" class="error" aria-live="polite"></small>
-            </fieldset>
-
-            <div class="controls">
-                <label>
-                    <input type="checkbox" id="remember" name="remember"> 
-                    Recuérdame
-                </label>
-                <a href="#" id="forgot">¿Olvidaste tu contraseña?</a>
-            </div>
-
-            <button type="submit">Entrar</button>
-            <button type="button" id="btnRegister">Registrarse</button>
-
-            <p>¿No tienes cuenta? <a href="register.html" id="linkRegister">Crea una aquí</a></p>
-        </form>
     </main>
 </body>
 </html>
